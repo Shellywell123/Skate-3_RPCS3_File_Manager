@@ -69,7 +69,7 @@ def get_current_save_parks():
     with open(file, 'r') as f:
        cont = f.read()
     print('\nCurrent Custom Park file in RPCS3:')
-    print(' - '+cont)
+    print(' - '+green+cont+white)
     return cont
 
 def update_park_save_changes():
@@ -133,7 +133,7 @@ def get_current_save_player():
     with open(file, 'r') as f:
        cont = f.read()
     print('\nCurrent Player Account in RPCS3:')
-    print(' - '+cont)
+    print(' - '+green+cont+white)
     return cont
 
 def update_player_save_changes():
@@ -198,7 +198,7 @@ def get_current_save_replay():
     with open(file, 'r') as f:
        cont = f.read()
     print('\nCurrent Replay files in RPCS3:')
-    print(' - '+cont)
+    print(' - '+green+cont+white)
     return cont
 
 def update_replay_save_changes():
