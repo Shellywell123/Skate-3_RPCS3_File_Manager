@@ -1,5 +1,13 @@
+#########################################################################
+# Imports                                                               #
+#########################################################################
+
 import os
 from colours import *
+
+#########################################################################
+# Paths                                                                 #
+#########################################################################
 
 #paths for python
 repo_path = "/mnt/c/Users/benja/Documents/Entertainment/Gaming/ROM's/Playstation 3/DLC's and Extras/Skate 3/Skate_3_Mod_Repo/"
@@ -23,17 +31,23 @@ os_rpcs3_parks_path      = os_rpcs3_savedata_path + 'BLES00760-SPARK_SKATER/'
 #########################################################################
 
 def empty_directory(path_to_dir):
-    """empties the RPCS3 folder before a differrent save park file is swapped in"""
+    """
+    empties the RPCS3 folder before a differrent save park file is placed into it
+    """
     os.system('rm {}*'.format(path_to_dir))
     print('Emptied {}'.format(path_to_dir))
 
 def print_files_in_dir(path_to_dir):
-    """shows the user the contents of the RPCS3 folder"""
+    """
+    shows the user the contents within the supplied directory
+    """
     for d in os.listdir(path_to_dir) :
         print(' - '+str(d))
 
 def print_subdirs_dirs_in_dir(path_to_dir):
-    """shows the user the possible options of save park files he can swap between"""
+    """
+    shows the user the directories within the supplied directory
+    """
     repo_list = []
     for d in os.listdir(path_to_dir) :
         if '.' not in d:
@@ -47,7 +61,9 @@ def print_subdirs_dirs_in_dir(path_to_dir):
 #########################################################################
 
 def park_ascii():
-    """ascii art for begining og program"""
+    """
+    ascii art for custom skateparks
+    """
     print(yellow+
 "--------------------------------------------------------------\n"+red+
 "  __|  |  /    \ __ __| __|"+white+" __ /"+red+"    _ \  \    _ \  |  /   __| \n"+
@@ -56,14 +72,18 @@ def park_ascii():
 yellow+"--------------------------------------------------------------"+white)
 
 def set_current_save_parks(newname):
-    """sets txt log to be the name of the current skate parks file in the RPCS3 folder"""
+    """
+    sets txt log to be the name of the current skate parks file in the RPCS3 folder
+    """
     file = repo_parks_path+'CPIRPCS3(DoNotDelete).txt'
 
     with open(file, 'w') as f:
         f.write(newname)
  
 def get_current_save_parks():
-    """ retrieve the name of the current skateparks file in the RPCS3 file from the log txt"""
+    """
+    retrieve the name of the current skateparks file in the RPCS3 file from the log txt
+    """
     file = repo_parks_path+'CPIRPCS3(DoNotDelete).txt'
 
     with open(file, 'r') as f:
@@ -73,18 +93,22 @@ def get_current_save_parks():
     return cont
 
 def update_park_save_changes():
-    """ performs a backup of any changes to a skate park file in the  RPCS3 folder before it is swapped out """
+    """
+    performs a backup of any changes to a skate park file in the RPCS3 folder before it is swapped out
+    """
     current_park_save = get_current_save_parks()
     try:
         osstr = 'cp {}* {}'.format(os_rpcs3_parks_path,os_repo_parks_path+current_park_save+'/')
         os.system(osstr)
-        print('Saved any changes made to {} to your repository'.format(current_park_save))
+        print('Saved any changes made to {} to your repository'.format(green+current_park_save+white))
     except:
-        print('Updated of {} in Repo FAILED'.format(current_park_save))
+        print(red+'Updated of {} in Repo FAILED'.format(current_park_save)+white)
         exit(0)
 
 def swap_park_saves():
-    """swaps out custom skate park saves in RPCS3 folder via a user input"""
+    """
+    swaps out custom skate park saves in RPCS3 folder via a user input
+    """
     update_park_save_changes()
     
     print('\nCustom Park files in your repository:')
@@ -111,7 +135,9 @@ def swap_park_saves():
 #########################################################################
 
 def player_ascii():
-    """ """
+    """ 
+    ascii art for player accounts
+    """
     print(
 yellow+"------------------------------------------------------------------------\n"+red+
 "  __|  |  /    \ __ __| __|"+white+" __ /"+red+"    _ \ |       \ \ \  / __|  _ \   __| \n"+
@@ -120,14 +146,18 @@ yellow+"------------------------------------------------------------------------
 yellow+"------------------------------------------------------------------------"+white)
 
 def set_current_save_player(newname):
-    """sets txt log to be the name of the current skate parks file in the RPCS3 folder"""
+    """
+    sets txt log to be the name of the current player account file in the RPCS3 folder
+    """
     file = repo_player_path+'CPIRPCS3(DoNotDelete).txt'
 
     with open(file, 'w') as f:
         f.write(newname)
 
 def get_current_save_player():
-    """ retrieve the name of the current skateparks file in the RPCS3 file from the log txt"""
+    """
+    retrieve the name of the current player account file in the RPCS3 file from the log txt
+    """
     file = repo_player_path+'CPIRPCS3(DoNotDelete).txt'
 
     with open(file, 'r') as f:
@@ -137,18 +167,22 @@ def get_current_save_player():
     return cont
 
 def update_player_save_changes():
-    """ performs a backup of any changes to a skate park file in the  RPCS3 folder before it is swapped out """
+    """
+    performs a backup of any changes to a player account file in the  RPCS3 folder before it is swapped out
+    """
     current_player_save = get_current_save_player()
     try:
         osstr = 'cp {}* {}'.format(os_rpcs3_player_path,os_repo_player_path+current_player_save+'/')
         os.system(osstr)
-        print('Saved any changes made to {} to your repository'.format(current_player_save))
+        print('Saved any changes made to {} to your repository'.format(green+current_player_save+white))
     except:
-        print('Updated of {} in Repo FAILED'.format(current_player_save))
+        print(red+'Updated of {} in Repo FAILED'.format(current_player_save)+white)
         exit(0)
 
 def swap_player_saves():
-    """swaps out custom skate park saves in RPCS3 folder via a user input"""
+    """
+    swaps out custom player account saves in RPCS3 folder via a user input
+    """
     update_player_save_changes()
     
     print('\nPlayer Accounts in your repository:')
@@ -176,7 +210,9 @@ def swap_player_saves():
 #########################################################################
 
 def replay_ascii():
-    """ """
+    """ 
+    ascii art for replay 
+    """
     print(
 yellow+"------------------------------------------------------------------------\n"+red+
 "  __|  |  /    \ __ __| __|"+white+" __ /"+red+"    _ \  __|  _ \ |       \ \ \  /  __| \n"+
@@ -185,14 +221,18 @@ yellow+"------------------------------------------------------------------------
 "-----------------------------------------------------------------------"+white)
 
 def set_current_save_replay(newname):
-    """sets txt log to be the name of the current skate parks file in the RPCS3 folder"""
+    """
+    sets txt log to be the name of the current replay file in the RPCS3 folder
+    """
     file = repo_replay_path+'CPIRPCS3(DoNotDelete).txt'
 
     with open(file, 'w') as f:
         f.write(newname)
 
 def get_current_save_replay():
-    """ retrieve the name of the current skateparks file in the RPCS3 file from the log txt"""
+    """
+    retrieve the name of the current replay file in the RPCS3 file from the log txt
+    """
     file = repo_replay_path +'CPIRPCS3(DoNotDelete).txt'
 
     with open(file, 'r') as f:
@@ -202,18 +242,22 @@ def get_current_save_replay():
     return cont
 
 def update_replay_save_changes():
-    """ performs a backup of any changes to a skate park file in the  RPCS3 folder before it is swapped out """
+    """
+    performs a backup of any changes to the replay file in the  RPCS3 folder before it is swapped out
+    """
     current_replay_save = get_current_save_replay()
     try:
         osstr = 'cp {}* {}'.format(os_rpcs3_replay_path,os_repo_replay_path+current_replay_save+'/')
         os.system(osstr)
-        print('Saved any changes made to {} to your repository'.format(current_replay_save))
+        print('Saved any changes made to {} to your repository'.format(green+current_replay_save+white))
     except:
-        print('Updated of {} in Repo FAILED'.format(current_replay_save))
+        print(red+'Updated of {} in Repo FAILED'.format(current_replay_save)+white)
         exit(0)
 
 def swap_replay_saves():
-    """swaps out custom skate park saves in RPCS3 folder via a user input"""
+    """
+    swaps out replay saves in RPCS3 folder via a user input
+    """
     update_replay_save_changes()
     
     print('\nReplay files in your repository:')
@@ -238,6 +282,9 @@ def swap_replay_saves():
 #########################################################################
 
 def chose_switcher():
+    """
+    main function of this file which acts as an interactive menu call other functions
+    """
     print(
 yellow+"--------------------------------------------------------------------\n"+red+
 "  __|  |  /    \ __ __| __|"+white+" __ /"+red+"     \  |   _ \  _ \  _ \  __|  _ \ \n"+
