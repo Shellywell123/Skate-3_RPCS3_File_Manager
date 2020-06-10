@@ -1,6 +1,6 @@
 # RPCS3-Skate3_File_Manager
 
-Program being build as an extended version of my other repoistory RPCS3_Skate3_Custom_Parks_Swapper. Still under development. Written in python to automate swapping players, replays and custom park files in the RPCS3 emulator for skate 3. You should set the paths in the python file to be relative to your own machine and used the Repo_Template as a Template for how you organise your files outside of RPCS3.I will eventually write '.md' files to explain the setup in more detail.\
+Program being build as an extended version of my other repoistory RPCS3_Skate3_Custom_Parks_Swapper. Still under development. Written in python to automate swapping players, replays and custom park files in the RPCS3 emulator for skate 3. You should set the paths in the python file to be relative to your own machine and use the Repo_Template as a Template for how you organise your files outside of RPCS3. I have also added a file showing my own repo structure in 'tree.md'. I will eventually write '.md' files to explain the setup in more detail.\
 \
 My understading thus far is, that the dir paths in RPCS3 are for:\
 
