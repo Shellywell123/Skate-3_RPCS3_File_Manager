@@ -3,6 +3,7 @@
 #########################################################################
 
 import os
+import readline
 from colours import *
 
 #########################################################################
@@ -41,8 +42,12 @@ def print_files_in_dir(path_to_dir):
     """
     shows the user the contents within the supplied directory
     """
+    repo_list = []
     for d in os.listdir(path_to_dir) :
         print(' - '+str(d))
+        repo_list.append(d)
+
+    return repo_list
 
 def print_subdirs_dirs_in_dir(path_to_dir):
     """
@@ -55,6 +60,23 @@ def print_subdirs_dirs_in_dir(path_to_dir):
             repo_list.append(d)
 
     return repo_list
+
+def set_tab_complete_options(options):
+    """
+    allows user to tab complete inputs
+    """
+
+    readline.parse_and_bind("tab: complete")
+
+    def complete(text,state):
+        if text:
+            results = [s for s in options if s and s.startswith(text)]
+        else: 
+            results = results[:]
+
+        return results[state]
+
+    readline.set_completer(complete)
 
 #########################################################################
 # CUSTOM PARKS                                                          #
@@ -113,6 +135,7 @@ def swap_park_saves():
     
     print('\nCustom Park files in your repository:')
     choice_list = print_subdirs_dirs_in_dir(repo_parks_path)
+    set_tab_complete_options(choice_list)
 
     choice = input('\nInput which Park_Saves you want to play (can copy and paste from list above):\n'+input_colour)
     print(white+'')
@@ -187,6 +210,7 @@ def swap_player_saves():
     
     print('\nPlayer Accounts in your repository:')
     choice_list = print_subdirs_dirs_in_dir(repo_player_path)
+    set_tab_complete_options(choice_list)
 
     choice = input('\nInput which Player Account you want to play (can copy and paste from list above):\n'+input_colour)
     print(white+'')
@@ -262,6 +286,7 @@ def swap_replay_saves():
     
     print('\nReplay files in your repository:')
     choice_list = print_subdirs_dirs_in_dir(repo_replay_path)
+    set_tab_complete_options(choice_list)
 
     choice = input('\nInput which Replay files you want (can copy and paste from list above):\n'+input_colour)
     print(white+'')
@@ -293,7 +318,8 @@ yellow+"--------------------------------------------------------------------\n"+
 yellow+"--------------------------------------------------------------------"+white)
 
     print('\nDirectories in your repository:')
-    print_subdirs_dirs_in_dir(repo_path)
+    choice_list = print_subdirs_dirs_in_dir(repo_path)
+    set_tab_complete_options(choice_list)
     choice = input('\nInput the directory name you want to switch: (can copy and paste from list above):\n'+input_colour)
     print(''+white)
 

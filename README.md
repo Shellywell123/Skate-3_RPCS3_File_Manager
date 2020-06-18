@@ -7,7 +7,7 @@ My understading thus far is, that the dir paths in RPCS3 are for:
  - ...BLES00760-ALIAS_SKATER/ for your player account
  - ...BLES00760-REPLY_SKATER/ for replays
  - ...BLES00760-SPARK_SKATER/ for custom parks
- - ...BLES00760-CFOTO_SKATER/ for ?
- - ...BLES00760-PHOTO_SKATER/ for ?\
+ - ...BLES00760-CFOTO_SKATER/ for photos
+ - ...BLES00760-PHOTO_SKATER/ for photos
 \
 and that replays can be used for charcter glitches, customparks can be used to get other parks by trading save files and player accounts store your players information and settings i.e your skaters prefs and story progress.
