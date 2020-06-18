@@ -11,10 +11,10 @@ from colours import *
 #########################################################################
 
 #paths for python
-repo_path = "/mnt/c/Users/benja/Documents/Entertainment/Gaming/ROM's/Playstation 3/DLC's and Extras/Skate 3/Skate_3_Mod_Repo/"
-repo_parks_path      = repo_path + 'Custom_Parks/'
-repo_replay_path     = repo_path + 'Replays/'
-repo_player_path     = repo_path + 'Player_Accounts/'
+repo_path              = "/mnt/c/Users/benja/Documents/Entertainment/Gaming/ROM's/Playstation 3/DLC's and Extras/Skate 3/Skate_3_Mod_Repo/"
+repo_parks_path        = repo_path + 'Custom_Parks/'
+repo_replay_path       = repo_path + 'Replays/'
+repo_player_path       = repo_path + 'Player_Accounts/'
 
 #paths for terminal
 os_repo_path           = "/mnt/c/Users/benja/Documents/Entertainment/Gaming/ROM\\'s/Playstation\\ 3/DLC\\'s\\ and\\ Extras/Skate\\ 3/Skate_3_Mod_Repo/"
@@ -22,10 +22,10 @@ os_repo_parks_path     = os_repo_path + 'Custom_Parks/'
 os_repo_replay_path    = os_repo_path + 'Replays/'
 os_repo_player_path    = os_repo_path + 'Player_Accounts/'
 
-os_rpcs3_savedata_path   = "/mnt/c/Users/benja/Documents/Entertainment/Gaming/Launchers/PS3/dev_hdd0/home/00000001/savedata/"
-os_rpcs3_player_path     = os_rpcs3_savedata_path + 'BLES00760-ALIAS_SKATER/'
-os_rpcs3_replay_path     = os_rpcs3_savedata_path + 'BLES00760-REPLY_SKATER/'
-os_rpcs3_parks_path      = os_rpcs3_savedata_path + 'BLES00760-SPARK_SKATER/'
+os_rpcs3_savedata_path = "/mnt/c/Users/benja/Documents/Entertainment/Gaming/Launchers/PS3/dev_hdd0/home/00000001/savedata/"
+os_rpcs3_player_path   = os_rpcs3_savedata_path + 'BLES00760-ALIAS_SKATER/'
+os_rpcs3_replay_path   = os_rpcs3_savedata_path + 'BLES00760-REPLY_SKATER/'
+os_rpcs3_parks_path    = os_rpcs3_savedata_path + 'BLES00760-SPARK_SKATER/'
 
 #########################################################################
 # General Functions                                                     #
@@ -304,6 +304,8 @@ def swap_replay_saves():
     else:
         print('not a valid input')
 
+#########################################################################
+# MAIN MENU                                                             #
 #########################################################################
 
 def chose_switcher():
