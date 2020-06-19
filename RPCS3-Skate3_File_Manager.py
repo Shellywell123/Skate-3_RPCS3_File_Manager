@@ -27,6 +27,9 @@ os_rpcs3_player_path   = os_rpcs3_savedata_path + 'BLES00760-ALIAS_SKATER/'
 os_rpcs3_replay_path   = os_rpcs3_savedata_path + 'BLES00760-REPLY_SKATER/'
 os_rpcs3_parks_path    = os_rpcs3_savedata_path + 'BLES00760-SPARK_SKATER/'
 
+#alias
+launch_alias = '/mnt/c/Users/benja/Documents/Entertainment/Gaming/Launchers/PS3/rpcs3.exe "C:\\Users\\benja\\Documents\\Entertainment\\Gaming\\ROM\'s\\Playstation 3\\Skate 3\\BLES00760\\PS3_GAME\\USRDIR\\EBOOT.BIN"'
+
 #########################################################################
 # General Functions                                                     #
 #########################################################################
@@ -344,3 +347,14 @@ yellow+"--------------------------------------------------------------------"+wh
 
 # run this
 chose_switcher()
+
+yes_no = ['yes','no']
+set_tab_complete_options(yes_no)
+lauchask = input('\nDo you want to launch Skate 3?\n'+input_colour)
+print(white)
+
+if lauchask == 'yes':
+    os.system(launch_alias)
+    print('Launching Skate 3...')
+else:
+    pass
