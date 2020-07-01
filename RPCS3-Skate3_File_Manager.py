@@ -22,13 +22,14 @@ os_repo_parks_path     = os_repo_path + 'Custom_Parks/'
 os_repo_replay_path    = os_repo_path + 'Replays/'
 os_repo_player_path    = os_repo_path + 'Player_Accounts/'
 
-os_rpcs3_savedata_path = "/mnt/c/Users/benja/Documents/Entertainment/Gaming/Launchers/PS3/dev_hdd0/home/00000001/savedata/"
+os_rpcs3_main_path     = "/mnt/c/Users/benja/Documents/Entertainment/Gaming/Launchers/PS3/"
+os_rpcs3_savedata_path = os_rpcs3_main_path + "dev_hdd0/home/00000001/savedata/"
 os_rpcs3_player_path   = os_rpcs3_savedata_path + 'BLES00760-ALIAS_SKATER/'
 os_rpcs3_replay_path   = os_rpcs3_savedata_path + 'BLES00760-REPLY_SKATER/'
 os_rpcs3_parks_path    = os_rpcs3_savedata_path + 'BLES00760-SPARK_SKATER/'
 
 #alias
-launch_alias = '/mnt/c/Users/benja/Documents/Entertainment/Gaming/Launchers/PS3/rpcs3.exe "C:\\Users\\benja\\Documents\\Entertainment\\Gaming\\ROM\'s\\Playstation 3\\Skate 3\\BLES00760\\PS3_GAME\\USRDIR\\EBOOT.BIN"'
+launch_alias = os_rpcs3_main_path+'rpcs3.exe "C:\\Users\\benja\\Documents\\Entertainment\\Gaming\\ROM\'s\\Playstation 3\\Skate 3\\BLES00760\\PS3_GAME\\USRDIR\\EBOOT.BIN"'
 
 #########################################################################
 # General Functions                                                     #
